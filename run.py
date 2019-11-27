@@ -3,7 +3,7 @@
 import config
 import sys
 
-from mbot import MBot
+from mbot import bot
 
 def usage_hint():
     s = "\n" +\
@@ -11,7 +11,7 @@ def usage_hint():
         "  $ ./run.py <config>\n" +\
         "\n" +\
         "example:\n" +\
-        "  $ ./run.py cfg/example.json"
+        "  $ ./run.py cfg/mb-bot.json"
     return s
 
 if __name__ == "__main__":
@@ -20,5 +20,4 @@ if __name__ == "__main__":
         sys.exit(0)
 
     cfg = config.load_cfg(sys.argv[1])
-    bot = MBot()
     bot.run(cfg["TOKEN"])
